@@ -1,0 +1,18 @@
+- name: Creating EC2
+  hosts: Demo
+  connection: local
+  tasks:
+    - name: Create EC2 instance
+      ec2_instance:
+        name: "ec2_ansible"
+        instance_type: t2.micro
+        image_id: ami-053b0d53c279acc90  # Replace with a valid AMI ID
+        key_name: "ansi" #enter the key_name
+        network:
+          assign_public_ip: true
+        state: present
+        region: us-east-1
+        aws_access_key_id: A************F
+        aws_secret_access_key: W*********************wh
+        security_group: Common
+        vpc_subnet_id: subnet-0********************a
